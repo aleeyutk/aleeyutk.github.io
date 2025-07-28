@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'A command-line Java application that helps track and categorize daily expenses.',
             technologies: 'Java, JDBC, SQL',
             links: [
-                { text: 'GitHub', url: 'https://github.com/aleeyutk' }
+                { text: 'GitHub', url: 'https://github.com/aleeyutk/ExpenseTracker' }
             ]
         }
     ];
