@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const emailBody = encodeURIComponent(
                 `Hello Aliyu,\n\n${message}\n\n---\nSender: ${name}\nReply-To: ${email}\nSent via portfolio (aleeyutk.github.io)`
             );
-            const mailtoUrl = `mailto:aleeyutk@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+            const mailtoUrl = `mailto:aliyuatk@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
             // Trigger client email application
             window.location.href = mailtoUrl;
@@ -496,9 +496,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="form-status-alert success">
                         <i class="fas fa-circle-check"></i>
                         <span>
-                            Opening your default email client to send to <strong>aleeyutk@gmail.com</strong>.
+                            Opening your default email client to send to <strong>aliyuatk@gmail.com</strong>.
                             If your client does not open automatically, you can email me directly at 
-                            <a href="mailto:aleeyutk@gmail.com" class="link-subtle" style="text-decoration: underline;">aleeyutk@gmail.com</a>.
+                            <a href="mailto:aliyuatk@gmail.com" class="link-subtle" style="text-decoration: underline;">aliyuatk@gmail.com</a>.
                         </span>
                     </div>
                 `;
@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Direct Email Copy Button
     if (copyEmailBtn) {
         copyEmailBtn.addEventListener('click', async function() {
-            const email = 'aleeyutk@gmail.com';
+            const email = 'aliyuatk@gmail.com';
             try {
                 await navigator.clipboard.writeText(email);
                 const originalHTML = this.innerHTML;
