@@ -3,92 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aliyu's Portfolio</title>
+    <title>Aliyu Abubakar Tukur — Full-Stack Software Developer</title>
+    <meta name="description" content="Personal engineering portfolio of Aliyu Abubakar Tukur — Full-Stack Software Developer building scalable web applications, business platforms, backend systems, APIs, and AI integrations.">
+    <meta name="theme-color" content="#09090b">
+
+    <!-- Fonts: Space Grotesk (Display), Inter (Body), JetBrains Mono (Tech) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header id="home">
-        <header id="home">
-    <nav>
-        <ul>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav aria-label="Main Navigation">
+        <div class="nav-container">
+            <a href="#home" class="brand-sig">
+                Aliyu Abubakar Tukur <span class="role-tag">[SE]</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#capabilities">What I Build</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#skills">Stack</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle" aria-label="Toggle dark mode">
-            <i class="fas fa-moon"></i>
-        </button>
+            </ul>
+            <div class="nav-actions">
+                <a href="docs/resume.pdf" download class="btn btn-sm btn-secondary nav-resume-btn">
+                    <i class="fas fa-file-pdf"></i> Resume
+                </a>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="btn-icon mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
     </nav>
 
-        <div class="hero">
-            <img src="images/profile.jpg" alt="Profile Photo" class="profile-pic">
-            <h1>Hi, I'm Aliyu</h1>
-            <p>Software Developer | Computer Scientist | Programmer </p>
-        </div>
-    </header>
+    <main id="main-content">
+        <header id="home">
+            <div class="hero">
+                <div class="hero-status-row">
+                    <span class="badge badge-status">
+                        <span class="badge-dot"></span> Available for full-stack & backend engineering roles
+                    </span>
+                    <span class="badge font-mono">
+                        <i class="fas fa-location-dot"></i> Nigeria (UTC+1)
+                    </span>
+                </div>
 
-    <section id="about" class="section">
-    <h2>About Me</h2>
-    <div class="about-content">
-        <p class="animate-text">I am a computer science graduate passionate about creativity in software development, content creation, and problem solving.</p>
-        <p class="animate-text delay-1">My hobbies include reading, playing football, and continuous learning.</p>
-    </div>
-</section>
+                <div class="hero-grid">
+                    <div class="hero-main">
+                        <div class="hero-eyebrow font-mono">Full-Stack Software Developer</div>
+                        <h1 class="hero-title">
+                            Building software that solves real-world problems.
+                            <span class="hero-tagline">Scalable web platforms, enterprise systems & APIs.</span>
+                        </h1>
+                        <p class="hero-desc">
+                            I design and engineer scalable web applications, business management platforms, backend systems, APIs, and AI integrations — from architecture and data modeling to modern interfaces and production deployment.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-lg btn-primary">View Selected Work <i class="fas fa-arrow-right"></i></a>
+                            <a href="#contact" class="btn btn-lg btn-secondary">Get in Touch</a>
+                            <a href="docs/resume.pdf" download class="btn btn-lg btn-ghost"><i class="fas fa-download"></i> Download Resume</a>
+                        </div>
+                    </div>
 
-    <section id="skills" class="section">
-        <h2>My Skills</h2>
-        <div class="skills-container">
-            <!-- Skills will be populated by JavaScript -->
-        </div>
-    </section>
+                    <aside class="hero-sidebar" aria-label="Engineering Profile Summary">
+                        <div class="hero-profile-card">
+                            <div class="hero-profile-header">
+                                <div class="hero-avatar-wrapper">
+                                    <img src="images/profile.jpg" alt="Aliyu Abubakar Tukur" class="profile-pic">
+                                    <span class="status-indicator-dot" title="Available"></span>
+                                </div>
+                                <div>
+                                    <div class="hero-profile-name">Aliyu Abubakar Tukur</div>
+                                    <div class="hero-profile-role font-mono">Full-Stack Developer</div>
+                                </div>
+                            </div>
+                            <div class="hero-profile-meta">
+                                <div class="hero-meta-item">
+                                    <span class="meta-item-label">Core Stack</span>
+                                    <span class="meta-item-val">Java • Spring Boot • React • TypeScript</span>
+                                </div>
+                                <div class="hero-meta-item">
+                                    <span class="meta-item-label">Architecture</span>
+                                    <span class="meta-item-val">Enterprise RBAC • REST APIs • Workflows</span>
+                                </div>
+                                <div class="hero-meta-item">
+                                    <span class="meta-item-label">Database & Ops</span>
+                                    <span class="meta-item-val">PostgreSQL • Liquibase • Docker</span>
+                                </div>
+                            </div>
+                            <div class="hero-profile-footer">
+                                <a href="https://github.com/aleeyutk" target="_blank" rel="noopener noreferrer" class="link-subtle" aria-label="GitHub Profile">
+                                    <i class="fab fa-github"></i> github.com/aleeyutk
+                                </a>
+                                <span class="badge badge-accent">Production Ready</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
 
-    <section id="projects" class="section">
-        <h2>Major Projects</h2>
-        <div class="projects-grid">
-            <!-- Projects will be populated by JavaScript -->
-        </div>
-    </section>
+                <div class="hero-focus-strip">
+                    <span class="focus-strip-label">CORE DOMAINS:</span>
+                    <div class="focus-strip-tags">
+                        <span class="badge">Business Platforms</span>
+                        <span class="badge">Spring Boot REST Services</span>
+                        <span class="badge">React & TypeScript</span>
+                        <span class="badge">PostgreSQL & Data Modeling</span>
+                        <span class="badge">AI Agent Workflows</span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <section id="resume" class="section">
-    <h2>My Resume</h2>
-    <div class="resume-container">
-        <div class="resume-download">
-            <a href="docs/resume.pdf" download class="download-btn">
-                <i class="fas fa-file-pdf"></i> Download PDF
-            </a>
-            <button id="toggle-preview" class="download-btn">
-                <i class="fas fa-eye"></i> Toggle Preview
-            </button>
-        </div>
-        
-        <div class="resume-preview hidden">
-            <embed src="docs/resume.pdf#toolbar=0&navpanes=0" type="application/pdf" />
-            <p class="preview-note">(PDF preview - click download for full version)</p>
-        </div>
-    </div>
-</section>
+        <!-- WHAT I BUILD -->
+        <section id="capabilities" class="section">
+            <div class="section-header">
+                <span class="section-eyebrow">Capabilities</span>
+                <h2 class="section-title">What I Build</h2>
+                <p class="section-desc">Production software designed around operational reality, scalable system architecture, and verified business workflows.</p>
+            </div>
 
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div id="form-status"></div>
-    </section>
+            <div class="capabilities-grid">
+                <!-- 1. Full-Stack Applications -->
+                <article class="capability-card">
+                    <div>
+                        <div class="capability-icon-wrapper">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="capability-eyebrow">Frontend to Backend</div>
+                        <h3 class="capability-title">Full-Stack Applications</h3>
+                        <p class="capability-desc">
+                            End-to-end web applications combining robust server-side architectures with responsive, type-safe, and accessible user interfaces.
+                        </p>
+                    </div>
+                    <ul class="capability-deliverables">
+                        <li><i class="fas fa-check"></i> <span>Component-driven UIs with React & TypeScript</span></li>
+                        <li><i class="fas fa-check"></i> <span>Type-safe API contract consumption</span></li>
+                        <li><i class="fas fa-check"></i> <span>Responsive layouts across mobile & desktop viewports</span></li>
+                    </ul>
+                </article>
+
+                <!-- 2. Backend Systems -->
+                <article class="capability-card">
+                    <div>
+                        <div class="capability-icon-wrapper">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="capability-eyebrow">System Architecture</div>
+                        <h3 class="capability-title">Backend Systems</h3>
+                        <p class="capability-desc">
+                            Scalable REST services, business logic, secure authentication, role-based authorization, and high-integrity transactional pipelines.
+                        </p>
+                    </div>
+                    <ul class="capability-deliverables">
+                        <li><i class="fas fa-check"></i> <span>Spring Boot enterprise services & clean architectures</span></li>
+                        <li><i class="fas fa-check"></i> <span>Stateless JWT auth & Role-Based Access Control (RBAC)</span></li>
+                        <li><i class="fas fa-check"></i> <span>Non-blocking asynchronous audit logging pipelines</span></li>
+                    </ul>
+                </article>
+
+                <!-- 3. Business Software -->
+                <article class="capability-card">
+                    <div>
+                        <div class="capability-icon-wrapper">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="capability-eyebrow">Operational Platforms</div>
+                        <h3 class="capability-title">Business Software</h3>
+                        <p class="capability-desc">
+                            Management and operational platforms designed around real-world domain workflows, multi-step approvals, and strict auditability.
+                        </p>
+                    </div>
+                    <ul class="capability-deliverables">
+                        <li><i class="fas fa-check"></i> <span>Multi-step state machines (DRAFT → PENDING → APPROVED → PAID)</span></li>
+                        <li><i class="fas fa-check"></i> <span>Inventory tracking, automated calculations & assays</span></li>
+                        <li><i class="fas fa-check"></i> <span>Sales receipt generation & immutable audit trails</span></li>
+                    </ul>
+                </article>
+
+                <!-- 4. AI & Automation -->
+                <article class="capability-card">
+                    <div>
+                        <div class="capability-icon-wrapper">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="capability-eyebrow">Intelligent Workflows</div>
+                        <h3 class="capability-title">AI & Automation</h3>
+                        <p class="capability-desc">
+                            AI-powered applications, external API integrations, and autonomous tool-calling agents built for practical automation tasks.
+                        </p>
+                    </div>
+                    <ul class="capability-deliverables">
+                        <li><i class="fas fa-check"></i> <span>Autonomous agent tool workflows & structured outputs</span></li>
+                        <li><i class="fas fa-check"></i> <span>Multi-API data aggregation & currency calculations</span></li>
+                        <li><i class="fas fa-check"></i> <span>Practical task automation with error recovery</span></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ENGINEERING STACK -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="section-eyebrow">Technical Breadth</span>
+                <h2 class="section-title">Engineering Stack</h2>
+                <p class="section-desc">Technologies and tools I use to architect, build, and deploy software. Only verified technologies from genuine repositories and projects.</p>
+            </div>
+
+            <div class="stack-grid">
+                <!-- 1. Languages -->
+                <div class="stack-card">
+                    <div class="stack-card-header">
+                        <div class="stack-icon-box">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="stack-category-title">Languages</h3>
+                    </div>
+                    <div class="stack-list">
+                        <div class="stack-item">
+                            <div class="stack-item-name">Java <span class="badge">Primary</span></div>
+                            <div class="stack-item-desc">Java 17, concurrency, object-oriented design</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">TypeScript <span class="badge">Primary</span></div>
+                            <div class="stack-item-desc">Type-safe interfaces, generics, modern tooling</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">JavaScript</div>
+                            <div class="stack-item-desc">ES6+, async/await, DOM APIs, Node.js</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Python</div>
+                            <div class="stack-item-desc">Automation, API integrations, agent workflows</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">SQL</div>
+                            <div class="stack-item-desc">Relational schema design, complex joins, indexing</div>
+                        </div>
+                    </div>
+                    <div class="stack-badge-row">
+                        <span class="badge">Java 17</span>
+                        <span class="badge">TypeScript</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">SQL</span>
+                    </div>
+                </div>
+
+                <!-- 2. Backend & Architecture -->
+                <div class="stack-card">
+                    <div class="stack-card-header">
+                        <div class="stack-icon-box">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3 class="stack-category-title">Backend & APIs</h3>
+                    </div>
+                    <div class="stack-list">
+                        <div class="stack-item">
+                            <div class="stack-item-name">Spring Boot 3 <span class="badge">Enterprise</span></div>
+                            <div class="stack-item-desc">REST API services, IoC, layered architectures</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Spring Security</div>
+                            <div class="stack-item-desc">Stateless JWT authentication & RBAC filters</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Spring Data JPA</div>
+                            <div class="stack-item-desc">Hibernate ORM, entity relationships, paging</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Node.js / Express</div>
+                            <div class="stack-item-desc">Lightweight REST microservices & handlers</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">OpenAPI / Swagger</div>
+                            <div class="stack-item-desc">Interactive API contracts & documentation</div>
+                        </div>
+                    </div>
+                    <div class="stack-badge-row">
+                        <span class="badge">Spring Boot</span>
+                        <span class="badge">JWT / RBAC</span>
+                        <span class="badge">Hibernate</span>
+                        <span class="badge">REST</span>
+                    </div>
+                </div>
+
+                <!-- 3. Frontend Engineering -->
+                <div class="stack-card">
+                    <div class="stack-card-header">
+                        <div class="stack-icon-box">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="stack-category-title">Frontend</h3>
+                    </div>
+                    <div class="stack-list">
+                        <div class="stack-item">
+                            <div class="stack-item-name">React <span class="badge">Modern</span></div>
+                            <div class="stack-item-desc">Functional components, hooks, Context API</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">TypeScript in React</div>
+                            <div class="stack-item-desc">Strict component props, typed event handlers</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Tailwind CSS</div>
+                            <div class="stack-item-desc">Utility-first design tokens, dark/light themes</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Vite</div>
+                            <div class="stack-item-desc">Optimized ES build system, rapid HMR</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Semantic HTML & CSS</div>
+                            <div class="stack-item-desc">WCAG AA accessibility, responsive design</div>
+                        </div>
+                    </div>
+                    <div class="stack-badge-row">
+                        <span class="badge">React</span>
+                        <span class="badge">Tailwind</span>
+                        <span class="badge">Vite</span>
+                        <span class="badge">WCAG AA</span>
+                    </div>
+                </div>
+
+                <!-- 4. Database & Infrastructure -->
+                <div class="stack-card">
+                    <div class="stack-card-header">
+                        <div class="stack-icon-box">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="stack-category-title">Data & Ops</h3>
+                    </div>
+                    <div class="stack-list">
+                        <div class="stack-item">
+                            <div class="stack-item-name">PostgreSQL 15 <span class="badge">Primary</span></div>
+                            <div class="stack-item-desc">ACID transactions, relational modeling</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Liquibase</div>
+                            <div class="stack-item-desc">Database change management & schema migrations</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Docker & Compose</div>
+                            <div class="stack-item-desc">Containerized backend, database & web services</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Git & GitHub</div>
+                            <div class="stack-item-desc">Source control, GitHub Pages static hosting</div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-item-name">Maven</div>
+                            <div class="stack-item-desc">Dependency management & JVM build lifecycle</div>
+                        </div>
+                    </div>
+                    <div class="stack-badge-row">
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">Liquibase</span>
+                        <span class="badge">Maven</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <span class="section-eyebrow">Background</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <p class="animate-text">I am a full-stack software developer with a strong foundation in computer science, backend architecture, and practical system design. I focus on building reliable business management systems, high-throughput APIs, and clean user interfaces.</p>
+                <p class="animate-text delay-1">My engineering philosophy emphasizes system correctness, auditability, clean API contracts, and continuous technical growth.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="section-eyebrow">Selected Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-desc">Production platforms, enterprise management systems, and backend services built around operational reality. Every project reflects verified architecture and genuine engineering implementation.</p>
+            </div>
+            
+            <div class="flagship-projects-grid" id="flagship-projects-grid">
+                <!-- Injected dynamically from verified FLAGSHIP_PROJECTS in script.js -->
+            </div>
+
+            <!-- Academic & Research Archive -->
+            <div class="archive-box">
+                <div class="archive-box-header">
+                    <div>
+                        <div class="archive-box-eyebrow font-mono">Academic Research & Capstone</div>
+                        <h3 class="archive-box-title">Security & Cryptography Archive</h3>
+                    </div>
+                    <button id="toggle-archive-btn" class="btn btn-sm btn-secondary" aria-expanded="false" aria-controls="archive-projects-container">
+                        <i class="fas fa-chevron-down"></i> <span id="archive-toggle-text">View Research Paper</span>
+                    </button>
+                </div>
+                <div id="archive-projects-container" class="archive-projects-container" style="display: none;">
+                    <div class="archive-grid" id="archive-projects-grid">
+                        <!-- Injected from ARCHIVE_PROJECTS in script.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="section">
+            <div class="section-header">
+                <span class="section-eyebrow">Qualifications</span>
+                <h2 class="section-title">Resume & Credentials</h2>
+                <p class="section-desc">Summary of verified engineering experience, enterprise technical capabilities, and academic foundation.</p>
+            </div>
+            <div class="resume-container">
+                <div class="resume-download">
+                    <a href="docs/resume.pdf" download class="download-btn">
+                        <i class="fas fa-file-pdf"></i> Download Resume PDF
+                    </a>
+                    <button id="toggle-preview" class="download-btn">
+                        <i class="fas fa-eye"></i> Toggle Preview
+                    </button>
+                </div>
+                
+                <div class="resume-preview">
+                    <embed src="docs/resume.pdf#toolbar=0&navpanes=0" type="application/pdf" />
+                    <p class="preview-note">PDF preview — Click download above for direct copy</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-header">
+                <span class="section-eyebrow">Direct Outreach</span>
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-desc">Open for full-stack and backend engineering roles, system architecture consultations, and collaborative business software development.</p>
+            </div>
+            
+            <div class="contact-layout">
+                <div class="contact-info-card">
+                    <h3 class="contact-info-heading">Direct Channels</h3>
+                    <p class="contact-info-desc">Reach out directly via email or GitHub. I typically respond within 24 business hours.</p>
+                    
+                    <div class="contact-channel-list">
+                        <a href="mailto:aleeyutk@gmail.com" class="contact-channel-link">
+                            <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <span class="channel-label">Direct Email</span>
+                                <span class="channel-val font-mono">aleeyutk@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/aleeyutk" target="_blank" rel="noopener noreferrer" class="contact-channel-link">
+                            <div class="channel-icon"><i class="fab fa-github"></i></div>
+                            <div>
+                                <span class="channel-label">GitHub Profile</span>
+                                <span class="channel-val font-mono">github.com/aleeyutk</span>
+                            </div>
+                        </a>
+                        <div class="contact-channel-link non-clickable">
+                            <div class="channel-icon"><i class="fas fa-location-dot"></i></div>
+                            <div>
+                                <span class="channel-label">Location & Timezone</span>
+                                <span class="channel-val">Nigeria (UTC+1) • Remote Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card-actions">
+                        <a href="docs/resume.pdf" download class="btn btn-sm btn-secondary" style="width: 100%;">
+                            <i class="fas fa-file-pdf"></i> Download Official Resume
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name" class="form-label">Full Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your name or organization" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="form-label">Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="name@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject" class="form-label">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="Role opening, engineering project inquiry, etc." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Message</label>
+                            <textarea id="contact-message" name="message" placeholder="Technical requirements, project scope, or opportunity details..." required></textarea>
+                        </div>
+                        <div class="form-button-row">
+                            <button type="submit" class="btn btn-primary" id="contact-submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="copy-email-btn">
+                                <i class="fas fa-copy"></i> Copy Email Address
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-status" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Accessible Case Study Modal -->
+        <div id="case-study-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-case-title">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <div class="modal-eyebrow font-mono" id="modal-case-eyebrow">ENGINEERING CASE STUDY</div>
+                    <button id="modal-close-btn" class="modal-close-btn" aria-label="Close case study dialog">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="modal-case-body" class="modal-body">
+                    <!-- Populated dynamically by openCaseStudy(slug) -->
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/aleeyutk" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="mailto:aleeyutk@gmail.com" aria-label="Direct Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Aliyu Abubakar Tukur. All rights reserved.</p>
         </div>
-        <p>&copy; <span id="year"></span> Aliyu. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>
