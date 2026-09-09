@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'Restaurant Operations & Management Platform',
             badge: 'Full-Stack Platform',
             category: 'Hospitality Operations & Real-Time Systems',
+            categories: ['fullstack', 'ai'],
             summary: 'A comprehensive multi-role operations platform for restaurants, synchronizing front-of-house table service, kitchen preparation displays, cashier reconciliation, and automated WhatsApp ordering.',
             technologies: ['Node.js 20', 'Fastify', 'PostgreSQL 16', 'Redis 7', 'Prisma ORM', 'Socket.io', 'React 18', 'TypeScript', 'Google Gemini AI'],
             highlightTitle: 'Key Engineering Highlight',
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'Mineral Operations, Assays & Inventory Platform (Nano Mines CMS)',
             badge: 'Enterprise Backend',
             category: 'Enterprise Resource Management & Auditing',
+            categories: ['java', 'fullstack'],
             summary: 'An auditable enterprise resource platform for mineral trading and excavation workflows, enforcing strict assay moisture calculations, multi-step invoice approvals, and non-blocking audit trails.',
             technologies: ['Java 17', 'Spring Boot 3.2', 'Spring Security', 'PostgreSQL 15', 'Liquibase', 'Docker Compose', 'React 19', 'TypeScript 5', 'Chart.js'],
             highlightTitle: 'Key Engineering Highlight',
@@ -89,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'Autonomous Multi-API Travel & Budget Engine',
             badge: 'AI Workflows',
             category: 'Intelligent Workflows & Agent Services',
+            categories: ['java', 'ai'],
             summary: 'An autonomous Java agent service that extracts travel intents from natural language messages, queries live country and foreign exchange APIs, and produces tailored local currency budget itineraries.',
             technologies: ['Java 17', 'Spring Boot 3.2', 'RestTemplate', 'Maven', 'Docker', 'Fly.io', 'REST Countries API', 'ExchangeRate.host', 'Telex.im'],
             highlightTitle: 'Key Engineering Highlight',
@@ -128,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtitle: 'High-Throughput REST Service & Dynamic Image Generator',
             badge: 'Backend & APIs',
             category: 'High-Throughput REST Platform',
+            categories: ['java'],
             summary: 'A containerized Spring Boot REST API providing automated country and exchange rate data synchronization, multi-parameter querying, and real-time server-rendered statistical summary images.',
             technologies: ['Java 17', 'Spring Boot 3.1', 'H2 Database', 'Maven', 'Docker', 'Fly.io', 'Oracle Cloud', 'Java 2D Graphics'],
             highlightTitle: 'Key Engineering Highlight',
@@ -159,6 +163,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 challenges: 'Coordinating background refresh operations without locking read queries during high API traffic. Implemented transactional JPA boundaries ensuring read queries remain non-blocking during background updates.',
                 status: 'Verified Public GitHub Repository & Deployment Automation'
             }
+        },
+        {
+            slug: 'schapp',
+            title: 'Scholarship Application Tracker (Schapp)',
+            subtitle: 'Deadlines, Documents & ICS Calendar Dispatch Engine',
+            badge: 'Full-Stack App',
+            category: 'Workflow Automation & Document Readiness',
+            categories: ['fullstack', 'ai'],
+            summary: 'A full-stack scholarship management platform that centralizes deadline tracking, automated RFC-5545 iCalendar (.ics) exports, document readiness state machines, and application analytics.',
+            technologies: ['Next.js 16', 'React 19', 'TypeScript 5', 'Prisma 7', 'Tailwind CSS 4', 'Better-SQLite3', 'Zod', 'Vitest', 'Google Gemini AI'],
+            highlightTitle: 'Key Engineering Highlight',
+            highlight: 'Automated RFC-5545 iCalendar (.ics) export engine, multi-stage document readiness state machines, and comprehensive Vitest unit test suite.',
+            repo: 'https://github.com/aleeyutk/schapp',
+            caseStudy: {
+                overview: 'Schapp is a specialized productivity and application tracking platform engineered to streamline scholarship discovery, deadline calendar integration, and document readiness management.',
+                problem: 'Scholarship applicants juggle disparate deadlines, submission requirements, recommendation requests, and essay drafts across multiple portals, frequently missing hard cutoff dates and lacking unified readiness visibility.',
+                solution: 'Engineered a Next.js 16 App Router application with React 19 server components and actions. Features an automated RFC-5545 compliant .ics calendar generator, Zod-validated mutation contracts, multi-stage document tracking, and real-time application health metrics.',
+                architecture: 'Next.js 16 App Router architecture utilizing React 19 server actions for mutation pipelines; Prisma 7 with SQLite for embedded relational persistence; Zod schemas enforcing strict input validation; RFC-5545 iCalendar generator producing universal calendar feeds; Vitest test runner for continuous unit verification.',
+                architectureFlow: {
+                    caption: 'Application Pipeline, Calendar Dispatch & Metrics Architecture',
+                    steps: [
+                        { num: '01. UI Layer', title: 'Next.js 16 & React 19', sub: 'Server & client components with Tailwind CSS v4' },
+                        { num: '02. Validation', title: 'Zod Schema Contracts', sub: 'Strict payload validation for deadlines & requirements' },
+                        { num: '03. Business Logic', title: 'Readiness Engine', sub: 'Document completion tracking & deadline sorting' },
+                        { num: '04. Calendar Egress', title: 'RFC-5545 ICS Engine', sub: 'Dynamic .ics event generation for Google/Apple Calendar' },
+                        { num: '05. Persistence', title: 'Prisma 7 ORM', sub: 'SQLite relational database with typed schema' }
+                    ],
+                    crosscutting: 'Comprehensive Vitest unit test suite covering validation rules, metric calculators, and calendar formatting'
+                },
+                keyFeatures: [
+                    'RFC-5545 iCalendar Generator creating one-click calendar imports with custom alarms and deadline reminders',
+                    'Document Readiness State Machine tracking transcripts, essays, recommendation letters, and financial proofs',
+                    'Dashboard Analytics Engine computing application progression rates, upcoming deadlines, and status distribution',
+                    'Robust Automated Test Suite built with Vitest verifying contract validations, edge cases, and date computations'
+                ],
+                engineeringDecisions: 'Built the calendar export engine natively compliant with RFC-5545 specifications to eliminate third-party calendar sync service dependencies.',
+                challenges: 'Managing time-zone conversions and daylight savings rules across diverse international scholarship deadlines. Implemented UTC timestamp normalizations in the ICS engine to ensure alarms fire accurately across any target calendar app.',
+                status: 'Verified Repository & Complete Vitest Suite'
+            }
         }
     ];
 
@@ -188,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const card = document.createElement('article');
             card.className = 'project-card flagship-card';
             card.setAttribute('data-slug', project.slug);
+            card.setAttribute('data-categories', project.categories.join(' '));
 
             const techBadges = project.technologies
                 .slice(0, 5)
@@ -248,6 +292,30 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.addEventListener('click', function() {
                 const slug = this.getAttribute('data-slug');
                 openCaseStudy(slug);
+            });
+        });
+
+        // Category filter interaction
+        const filterPills = document.querySelectorAll('.filter-pill');
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                filterPills.forEach(p => {
+                    p.classList.remove('active');
+                    p.setAttribute('aria-selected', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+
+                const cards = flagshipGrid.querySelectorAll('.flagship-card');
+                cards.forEach(card => {
+                    const cardCats = (card.getAttribute('data-categories') || '').split(' ');
+                    if (filter === 'all' || cardCats.includes(filter)) {
+                        card.classList.remove('is-hidden');
+                    } else {
+                        card.classList.add('is-hidden');
+                    }
+                });
             });
         });
     }

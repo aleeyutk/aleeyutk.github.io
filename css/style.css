@@ -1208,6 +1208,61 @@ header#home {
 /* --------------------------------------------------------------------------
    12. PROJECTS GRID & CARDS
    -------------------------------------------------------------------------- */
+.project-filter-bar {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+}
+
+.filter-pill {
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
+    font-family: var(--font-mono);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+    background-color: var(--surface-elevated);
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+}
+
+.filter-pill.active {
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: #ffffff;
+}
+
+.filter-pill.active .filter-count {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 7px;
+    border-radius: var(--radius-full);
+    background-color: var(--surface-elevated);
+    color: var(--text-muted);
+    font-size: 10px;
+    transition: all var(--transition-fast);
+}
+
+.flagship-card.is-hidden {
+    display: none !important;
+}
+
 .flagship-projects-grid {
     display: grid;
     grid-template-columns: 1fr;
