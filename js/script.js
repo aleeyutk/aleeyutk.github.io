@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 problem: 'Restaurants experience frequent order miscommunications between waitstaff and the kitchen, peak-hour bottlenecks during bill settlement, and revenue leakage from untracked table orders. Additionally, manual telephone and text-based ordering ties up staff time and introduces human error.',
                 solution: 'Architected and developed a unified operational hub featuring 5 tailored role dashboards (Admin, Manager, Cashier, Waiter, Kitchen). The platform synchronizes order lifecycles via WebSockets, calculates exact subtotals, VAT, and service charges with payment matching, and exposes an autonomous WhatsApp ordering bot.',
                 architecture: 'Fastify server backend with Socket.io for millisecond-latency order broadcasting; Redis pub/sub handles terminal synchronization across network partitions; PostgreSQL relational schema managed through Prisma ORM; React 18 / TypeScript frontend with role-specific views.',
+                architectureFlow: {
+                    caption: 'Real-Time Order Lifecycle & Telemetry Pipeline',
+                    steps: [
+                        { num: '01. Ingestion', title: 'Client Personas', sub: 'Waiters, Cashiers & WhatsApp orders' },
+                        { num: '02. API Gateway', title: 'Fastify Server', sub: 'JWT stateless auth, 5-role RBAC, validation' },
+                        { num: '03. Event Bus', title: 'Redis Pub/Sub', sub: 'Low-latency order queue across processes' },
+                        { num: '04. WebSocket Stream', title: 'Socket.io Engine', sub: 'Instant broadcast to KDS & terminals' },
+                        { num: '05. Persistence', title: 'PostgreSQL 16', sub: 'Prisma ORM schema & immutable audit' }
+                    ],
+                    crosscutting: 'Conversational WhatsApp AI bot powered by Google Gemini with deterministic JSON schema extraction'
+                },
                 keyFeatures: [
                     'Real-Time Kitchen Display System (KDS) with instant ticket status transitions (Pending → Cooking → Ready → Served)',
                     'Multi-Persona Access Control tailored for Admins, Shift Managers, Cashiers, Waitstaff, and Kitchen Crews',
@@ -50,6 +61,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 problem: 'Commercial mineral trading involves variable purity percentages (assays) and moisture content across distinct ore types (Tantalite, Lithium, Lead, Columbite, etc.). Manual calculations cause severe financial discrepancies, and lack of auditable approval chains creates regulatory exposure.',
                 solution: 'Engineered an auditable enterprise system with strict Role-Based Access Control for Lab Technicians, Finance Officers, and General Managers. Automated dry-weight deduction and assay valuation algorithms, enforced an immutable 4-step invoice approval state machine, and integrated non-blocking event-driven audit logging.',
                 architecture: 'Multi-tier Spring Boot 3 architecture utilizing stateless JWT filters and method-level @PreAuthorize security. Database migrations are strictly managed via Liquibase across PostgreSQL 15. The containerized environment is packaged with Docker Compose.',
+                architectureFlow: {
+                    caption: 'Strict 4-Stage State Machine & Auditing Pipeline',
+                    steps: [
+                        { num: '01. Lab Intake', title: 'Assay Valuation', sub: 'Dry-weight & purity computation across 10 minerals' },
+                        { num: '02. Stage 1', title: 'DRAFT State', sub: 'Lab technician entries & valuation calculations' },
+                        { num: '03. Stage 2', title: 'PENDING State', sub: 'Finance officer verification & invoice drafting' },
+                        { num: '04. Stage 3', title: 'APPROVED State', sub: 'General manager authorization & lock' },
+                        { num: '05. Stage 4', title: 'PAID State', sub: 'Settlement & automated warehouse deduction' }
+                    ],
+                    crosscutting: 'Asynchronous Spring ApplicationEventPublisher writes immutable audit logs without locking transaction commits'
+                },
                 keyFeatures: [
                     'Automated Mineral Valuation Engine computing dry weight and net value based on assay purity across 10 mineral profiles',
                     'Strict 4-Stage State Machine preventing unauthorized invoice modifications once approved or paid',
@@ -78,6 +100,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 problem: 'Travelers spend significant time manually gathering visa policies, country profiles, and current foreign exchange rates across disparate tools to produce a realistic travel budget.',
                 solution: 'Constructed an automated Spring Boot agent service that ingests conversational travel prompts, extracts target country and duration, queries geographic metadata from REST Countries API, and fetches live FX rates from ExchangeRate.host to calculate realistic budget breakdowns.',
                 architecture: 'Lightweight containerized microservice deployed via Docker. Features resilient REST clients with timeout handling, modular budget computation heuristics, and compliance with the Telex.im Agent-to-Agent (A2A) JSON webhook specification.',
+                architectureFlow: {
+                    caption: 'Multi-API Agent Ingestion & Dispatch Pipeline',
+                    steps: [
+                        { num: '01. Ingestion', title: 'Conversational Input', sub: 'Natural language travel destination & duration' },
+                        { num: '02. Extraction', title: 'Intent Parser', sub: 'Extracts target country, dates, and budget profile' },
+                        { num: '03. Enrichment', title: 'External APIs', sub: 'REST Countries (visas) & ExchangeRate.host (FX)' },
+                        { num: '04. Calculation', title: 'Budget Engine', sub: 'Local currency categorization & cost heuristics' },
+                        { num: '05. Delivery', title: 'Telex.im Webhook', sub: 'Structured A2A Markdown payload dispatch' }
+                    ],
+                    crosscutting: 'Resilient HTTP client with defensive timeout handling and ISO currency code reconciliation'
+                },
                 keyFeatures: [
                     'Conversational Intent Parsing extracting destination countries and trip durations from user prompts',
                     'Multi-API Pipeline chaining country metadata with live foreign exchange rates',
@@ -105,6 +138,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 problem: 'Applications displaying international demographic data often encounter rate limits from upstream providers and lack server-side dynamic graphic generation for sharing cards or embeds.',
                 solution: 'Engineered a containerized REST service with scheduled background data refreshing, multi-parameter query filtering (country code, currency, population, estimated GDP), and dynamic server-side summary PNG generation via Java 2D Graphics.',
                 architecture: 'Layered REST architecture with Spring Data JPA over a file-persisted H2 engine, OpenAPI 3 contract documentation, Docker container packaging, and automated Oracle Cloud Infrastructure deployment automation.',
+                architectureFlow: {
+                    caption: 'Data Sync, Query & Dynamic Rendering Pipeline',
+                    steps: [
+                        { num: '01. Sync', title: 'Scheduled Ingestion', sub: '/api/countries/refresh pulls upstream sources' },
+                        { num: '02. Storage', title: 'Spring Data JPA', sub: 'Persistent H2 relational storage with indexes' },
+                        { num: '03. REST Layer', title: 'Query Endpoints', sub: 'Multi-parameter filtering by GDP, population, code' },
+                        { num: '04. Graphics', title: 'Java 2D Engine', sub: 'Server-side rasterization & dynamic layout' },
+                        { num: '05. Egress', title: 'Binary PNG Stream', sub: '/api/countries/image direct card embeds' }
+                    ],
+                    crosscutting: 'Transactional boundaries ensure queries remain non-blocking during background dataset updates'
+                },
                 keyFeatures: [
                     'Scheduled and on-demand synchronization endpoint (/api/countries/refresh) aggregating global data',
                     'Multi-parameter filtering and sorting by ISO country codes, currency types, population ranges, and GDP',
@@ -306,6 +350,41 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
 
+        let architectureDiagramHTML = '';
+        if (cs.architectureFlow) {
+            const stepsHTML = cs.architectureFlow.steps.map((step, idx) => {
+                const isLast = idx === cs.architectureFlow.steps.length - 1;
+                const arrow = isLast ? '' : '<div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>';
+                return `
+                    <div class="arch-step-node">
+                        <span class="arch-step-num">${step.num}</span>
+                        <div class="arch-step-title">${step.title}</div>
+                        <div class="arch-step-sub">${step.sub}</div>
+                    </div>
+                    ${arrow}
+                `;
+            }).join('');
+
+            const crosscuttingHTML = cs.architectureFlow.crosscutting ? `
+                <div class="arch-crosscutting font-mono">
+                    <i class="fas fa-network-wired"></i>
+                    <span>${cs.architectureFlow.crosscutting}</span>
+                </div>
+            ` : '';
+
+            architectureDiagramHTML = `
+                <div class="case-arch-box">
+                    <div class="case-arch-caption">
+                        <i class="fas fa-diagram-project"></i> ${cs.architectureFlow.caption}
+                    </div>
+                    <div class="arch-flow">
+                        ${stepsHTML}
+                    </div>
+                    ${crosscuttingHTML}
+                </div>
+            `;
+        }
+
         modalBody.innerHTML = `
             <div class="case-study-hero">
                 <span class="badge badge-accent">${project.badge}</span>
@@ -333,6 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="case-study-section">
                     <h3 class="case-section-heading font-mono"><i class="fas fa-sitemap"></i> 4. SYSTEM ARCHITECTURE</h3>
                     <p class="case-section-body">${cs.architecture}</p>
+                    ${architectureDiagramHTML}
                 </div>
 
                 <div class="case-study-section">

@@ -38,7 +38,7 @@ const handler = async (event) => {
   const mailOptions = {
     from: process.env.GMAIL_USER,
     replyTo: email,
-    to: process.env.RECEIVER_EMAIL || process.env.GMAIL_USER || 'your-email@gmail.com',
+    to: process.env.RECEIVER_EMAIL || process.env.GMAIL_USER || 'aliyuatk@gmail.com',
     subject: `Portfolio Contact: New message from ${name}`,
     text: `Sender: ${name} (${email})\n\nMessage:\n${message}`
   };
